@@ -1,0 +1,37 @@
+@import '~bootstrap/scss/maps';
+@import '~bootstrap/scss/utilities';
+
+$utilities: map-merge(
+  $utilities,
+  (
+    'height': (
+      property: height,
+      class: h,
+      responsive: true,
+      values: (
+        '40px': 40px,
+        '105px': 105px,
+        25: 25%,
+        50: 50%,
+        75: 75%,
+        '25vh': 25vh,
+        '30vh': 30vh,
+        '35vh': 35vh,
+        '40vh': 40vh,
+        '45vh': 45vh,
+        '50vh': 50vh,
+        '55vh': 55vh,
+        '65vh': 65vh,
+        '70vh': 70vh,
+        '75vh': 75vh,
+        '80vh': 80vh,
+        '85vh': 85vh,
+        '90vh': 90vh,
+        '95vh': 95vh,
+        '100vh': 100vh,
+        100: 100%,
+        auto: auto,
+      ),
+    ),
+  )
+);
