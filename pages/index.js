@@ -35,11 +35,18 @@ const dataCarousel = [
 ];
 
 const Home = () => {
+  const _handleNext = () => {};
+
+  const _handlePrev = () => {};
+
   return (
     <section className="section-head-of-page">
       {dataCarousel.map((vm, idx) => {
         return (
-          <div className="carousel-container" key={idx}>
+          <div
+            className={'carousel-container' + (idx === 0 ? ' current' : '')}
+            key={idx}
+          >
             <img
               src={vm.image.thumbnail}
               alt={vm.title}
@@ -69,6 +76,24 @@ const Home = () => {
           </div>
         );
       })}
+
+      <div className="container">
+        <div className="carousel-control">
+          <button
+            className="btn btn-transparent text-white px-0"
+            onClick={_handlePrev}
+          >
+            Prev
+          </button>
+
+          <button
+            className="btn btn-transparent text-white px-0"
+            onClick={_handleNext}
+          >
+            Next
+          </button>
+        </div>
+      </div>
     </section>
   );
 };
