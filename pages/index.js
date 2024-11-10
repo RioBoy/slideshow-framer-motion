@@ -1,4 +1,7 @@
-const dataCarousel = [
+import SlideShowControl from '@/component/slideShow/SlideShowControl';
+import SlideShowImage from '@/component/slideShow/SlideShowImage';
+
+const dataSlides = [
   {
     title: 'Your World, Seamlessly Connected',
     descriptionOne:
@@ -41,59 +44,14 @@ const Home = () => {
 
   return (
     <section className="section-head-of-page">
-      {dataCarousel.map((vm, idx) => {
-        return (
-          <div
-            className={'carousel-container' + (idx === 0 ? ' current' : '')}
-            key={idx}
-          >
-            <img
-              src={vm.image.thumbnail}
-              alt={vm.title}
-              className="carousel-image"
-            />
+      <SlideShowImage images={dataSlides} />
 
-            <div className="img-linear-background" />
-
-            <div className="container">
-              <div className="row">
-                <div className="col-md-6 position-static">
-                  <div className="carousel-text-wrapper">
-                    <h1 className="mb-0">{vm.title}</h1>
-
-                    <div className="carousel-text-desc my-5">
-                      <h5 className="mb-4">{vm.descriptionOne}</h5>
-                      <h5 className="description-two mb-0">
-                        {vm.descriptionTwo}
-                      </h5>
-                    </div>
-
-                    <button className="btn btn-primary">{vm.linkName}</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        );
-      })}
-
-      <div className="container">
-        <div className="carousel-control">
-          <button
-            className="btn btn-transparent text-white px-0"
-            onClick={_handlePrev}
-          >
-            Prev
-          </button>
-
-          <button
-            className="btn btn-transparent text-white px-0"
-            onClick={_handleNext}
-          >
-            Next
-          </button>
-        </div>
-      </div>
+      <SlideShowControl
+        actions={{
+          prev: _handlePrev,
+          next: _handleNext,
+        }}
+      />
     </section>
   );
 };
