@@ -6,12 +6,16 @@
   position: relative;
 
   .slides {
+    width: 100%;
+    height: 100vh;
+
     .slide {
-      display: none;
+      width: 100%;
+      height: 100%;
 
       .slide-image {
         width: 100%;
-        height: 100vh;
+        height: 100%;
         object-fit: cover;
         object-position: center;
       }
@@ -51,10 +55,6 @@
         width: 100%;
         background: linear-gradient(90deg, #000 47.4%, rgba(0, 0, 0, 0) 96.1%);
         opacity: 0.3;
-      }
-
-      &.current {
-        display: block;
       }
     }
   }

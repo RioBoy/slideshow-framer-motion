@@ -1,8 +1,11 @@
+import { useState } from 'react';
+import { wrap } from 'popmotion';
 import SlideShowControl from '@/component/slideShow/SlideShowControl';
 import SlideShowImage from '@/component/slideShow/SlideShowImage';
 
 const dataSlides = [
   {
+    id: 1,
     title: 'Your World, Seamlessly Connected',
     descriptionOne:
       'Enjoy robust and reliable connectivity for all your personal and professional needs.',
@@ -14,6 +17,7 @@ const dataSlides = [
     },
   },
   {
+    id: 2,
     title: 'Where Speed Meets Reliability',
     descriptionOne:
       'Experience high-speed internet tailored to your home or business, anytime, anywhere.',
@@ -25,6 +29,7 @@ const dataSlides = [
     },
   },
   {
+    id: 3,
     title: 'Empowering Your Digital Life',
     descriptionOne:
       'Boost your internet experience with cutting-edge connectivity solutions.',
@@ -38,13 +43,25 @@ const dataSlides = [
 ];
 
 const Home = () => {
-  const _handleNext = () => {};
+  const [[page, direction], setPage] = useState([0, 0]);
 
-  const _handlePrev = () => {};
+  const currentImageIndex = wrap(0, dataSlides.length, page);
+
+  const _handlePaginate = (newDirection = 0) => {
+    setPage([page + newDirection, newDirection]);
+  };
+
+  const _handleNext = () => _handlePaginate(1);
+
+  const _handlePrev = () => _handlePaginate(-1);
 
   return (
     <section className="section-head-of-page">
-      <SlideShowImage images={dataSlides} />
+      <SlideShowImage
+        images={dataSlides}
+        currentImageIndex={currentImageIndex}
+        direction={direction}
+      />
 
       <SlideShowControl
         actions={{
