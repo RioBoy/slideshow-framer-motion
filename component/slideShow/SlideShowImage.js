@@ -25,7 +25,7 @@ const SlideShowImage = ({
 
         <div className="img-linear-background" />
 
-        <SlideShowContent slideDetail={slideDetail} />
+        <SlideShowContent slideDetail={slideDetail} direction={direction} />
       </div>
     </div>
   );

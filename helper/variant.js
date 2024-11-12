@@ -2,9 +2,11 @@ import { easeInOut } from 'framer-motion';
 
 export const slideRight = (delay) => {
   return {
-    hidden: {
-      opacity: 0,
-      x: 100,
+    hidden: (direction) => {
+      return {
+        opacity: 0,
+        x: direction >= 0 ? 100 : -50,
+      };
     },
     show: {
       opacity: 1,
@@ -15,13 +17,15 @@ export const slideRight = (delay) => {
         ease: easeInOut,
       },
     },
-    exit: {
-      opacity: 0,
-      x: -100,
-      transition: {
-        duration: 0.3,
-        ease: easeInOut,
-      },
+    exit: (direction) => {
+      return {
+        opacity: 0,
+        x: direction < 0 ? 100 : -100,
+        transition: {
+          duration: 0.3,
+          ease: easeInOut,
+        },
+      };
     },
   };
 };

@@ -17,8 +17,9 @@ export const slideImageAnimate = (variants = {}, custom) => {
   };
 };
 
-export const slideRightAnimate = (variants = {}) => {
+export const slideRightAnimate = (variants = {}, custom) => {
   return {
+    custom,
     variants,
     initial: 'hidden',
     animate: 'show',
