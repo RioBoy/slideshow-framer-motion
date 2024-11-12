@@ -34,10 +34,12 @@ export const imageSlide = {
   initial: (direction) => {
     return {
       x: direction > 0 ? '100vw' : '-100vw',
+      opacity: 0,
     };
   },
   enter: {
     x: 0,
+    opacity: 1,
     transition: {
       duration: 0.75,
       delay: 0.3,
@@ -50,6 +52,7 @@ export const imageSlide = {
   exit: (direction) => {
     return {
       x: direction < 0 ? '100vw' : '-100vw',
+      opacity: 0.8,
       transition: {
         duration: 0.75,
         delay: 0.3,

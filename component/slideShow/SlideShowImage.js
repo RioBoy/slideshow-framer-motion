@@ -11,7 +11,14 @@ const SlideShowImage = ({
   const slideDetail = images[currentImageIndex];
 
   return (
-    <div className="slides">
+    <div
+      className="slides"
+      style={{
+        backgroundImage: `url(${slideDetail.image.thumbnail})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
       <div className="slide">
         <AnimatePresence initial={false} custom={direction}>
           <motion.img
