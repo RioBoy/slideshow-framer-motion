@@ -22,11 +22,11 @@ const SlideShowImage = ({
             {...slideImageAnimate(imageSlide, direction)}
           />
         </AnimatePresence>
+
+        <div className="img-linear-background" />
+
+        <SlideShowContent slideDetail={slideDetail} />
       </div>
-
-      <div className="img-linear-background" />
-
-      <SlideShowContent slideDetail={slideDetail} />
     </div>
   );
 };
