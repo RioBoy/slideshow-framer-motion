@@ -43,7 +43,7 @@ export const imageSlide = {
     transition: {
       duration: 0.75,
       delay: 0.3,
-      ease: [0.76, 0, 0.24, 1],
+      ease: easeInOut,
     },
     transitionEnd: {
       x: 0,
@@ -56,7 +56,7 @@ export const imageSlide = {
       transition: {
         duration: 0.75,
         delay: 0.3,
-        ease: [0.76, 0, 0.24, 1],
+        ease: easeInOut,
       },
     };
   },
